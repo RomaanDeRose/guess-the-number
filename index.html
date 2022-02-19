@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Adivina el número!</title>
+  </head>
+  <body>
+    <h1>Adivina el número!</h1>
+    <form class="gameContainer" action="">
+      <input
+        type="number"
+        name=""
+        id="inputNumber"
+        value="1"
+        min="1"
+        max="10"
+      />
+      <button type="submit" id="buttonPlay">JUGAR</button>
+    </form>
+    <p id="bigOrSmall"></p>
+    <div class="lifesContainer">
+      <h2>Vidas:</h2>
+      <p id="lifes">3</p>
+    </div>
+    <div class="modalWinOrLose">
+      <p id="modalText">Ganaste!!!</p>
+      <p id="number">El número era <span id="numberCPU"></span></p>
+      <button id="reset">
+        <i class="fas fa-redo-alt" id="iconReload"></i>
+      </button>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

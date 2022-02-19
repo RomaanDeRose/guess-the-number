@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: "Supermercado One", cursive;
+  color: rgb(65, 82, 233);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #121212;
+}
+
+h1 {
+  font-size: 3.6rem;
+  margin: 2.2rem 0 1.8rem 0;
+}
+
+.gameContainer {
+  border: 5px solid rgb(65, 82, 233);
+  border-radius: 60px;
+  width: 74%;
+  max-width: 45rem;
+  margin: 0 auto;
+  padding: 2.6rem 0;
+}
+
+.gameContainer input {
+  display: block;
+  margin: 0 auto;
+  margin-top: 0.5rem;
+  width: 26%;
+  padding: 0.6rem;
+  font-size: 2.6rem;
+  background-color: transparent;
+  border: 2px solid rgb(65, 82, 233);
+  border-radius: 16px;
+  box-shadow: 0px 0px 4px rgb(65, 82, 233);
+}
+.gameContainer input:focus {
+  outline: none;
+  box-shadow: 0px 0px 10px rgb(65, 82, 233);
+}
+
+.gameContainer button {
+  background-color: rgb(65, 82, 233);
+  color: #121212;
+  border: none;
+  border-radius: 20px;
+  font-size: 3rem;
+  padding: 0.9rem 1.9rem;
+  margin-top: 2rem;
+  box-shadow: 0px 0px 7px rgb(65, 82, 233);
+  transition: all 200ms ease;
+  cursor: pointer;
+}
+.gameContainer button:hover {
+  box-shadow: 0px 0px 12px rgb(65, 82, 233);
+}
+.gameContainer button:active {
+  transform: scale(0.97);
+}
+
+.lifesContainer h2 {
+  margin-top: 3.6rem;
+  font-size: 3.2rem;
+}
+.lifesContainer p {
+  margin-top: -1.5rem;
+  font-size: 11rem;
+}
+#bigOrSmall {
+  font-size: 4rem;
+  margin: 1rem;
+}
+
+.modalWinOrLose {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #121212ee;
+  display: none;
+}
+.active {
+  display: flex;
+}
+.modalWinOrLose p {
+  font-size: 5.2rem;
+  margin: 0.5rem 0;
+  color: #121212;
+}
+.modalWinOrLose #number {
+  font-size: 3.6rem;
+}
+.modalWinOrLose #number span {
+  font-size: 5.1rem;
+  color: #121212;
+}
+.modalWinOrLose button {
+  border: none;
+  background-color: #121212;
+  padding: 1.5rem;
+  margin: 0.8rem 0;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+.modalWinOrLose button:hover {
+  box-shadow: 0px 0px 12px #121212;
+}
+.modalWinOrLose button i.fas.fa-redo-alt {
+  color: rgb(65, 82, 233);
+  font-size: 3rem;
+}
