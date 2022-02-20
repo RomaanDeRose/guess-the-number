@@ -16,24 +16,25 @@
   </head>
   <body>
     <h1>Adivina el número!</h1>
+    <p class="description" id="descriptionDifficulty"></p>
     <form class="gameContainer" action="">
-      <input
-        type="number"
-        name=""
-        id="inputNumber"
-        value="1"
-        min="1"
-        max="10"
-      />
+      <input type="number" name="" id="inputNumber" value="1" required />
       <button type="submit" id="buttonPlay">JUGAR</button>
     </form>
     <p id="bigOrSmall"></p>
     <div class="lifesContainer">
       <h2>Vidas:</h2>
-      <p id="lifes">3</p>
+      <p id="lifes"></p>
     </div>
+    <p class="difficulty">Dificultad:</p>
+    <select class="difficultyContainer">
+      <option value="begin">Fácil</option>
+      <option value="normal">Normal</option>
+      <option value="hard">Difícil</option>
+      <option value="expert">Experto</option>
+    </select>
     <div class="modalWinOrLose">
-      <p id="modalText">Ganaste!!!</p>
+      <p id="modalText"></p>
       <p id="number">El número era <span id="numberCPU"></span></p>
       <button id="reset">
         <i class="fas fa-redo-alt" id="iconReload"></i>

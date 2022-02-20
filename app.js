@@ -37,25 +37,58 @@ const winOrLose = (boolean) => {
   }
 };
 
-const numberCPU = Math.ceil(Math.random() * 10);
-const user = document.getElementById("inputNumber");
-const buttonPlay = document.getElementById("buttonPlay");
-const lifes = document.getElementById("lifes");
-let life = 3;
+const difficultyStatement = (maxNumber, level) => {
+  numberCPU = Math.ceil(Math.random() * maxNumber);
+  descriptionDifficulty.textContent = `Nivel ${level}: del 1 al ${maxNumber}`;
+  inputNumber.setAttribute("min", 1);
+  inputNumber.setAttribute("max", maxNumber);
+};
 
-buttonPlay.addEventListener("click", (e) => {
+let numberCPU;
+const user = document.getElementById("inputNumber");
+const playGame = document.querySelector(".gameContainer");
+const lifes = document.getElementById("lifes");
+
+const difficulty = document.querySelector(".difficultyContainer");
+const descriptionDifficulty = document.getElementById("descriptionDifficulty");
+
+difficulty.value = "begin";
+numberCPU = Math.ceil(Math.random() * 10);
+descriptionDifficulty.textContent = "Nivel Facil: del 1 al 10";
+inputNumber.setAttribute("min", 1);
+inputNumber.setAttribute("max", 10);
+lifes.textContent = 3;
+
+difficulty.addEventListener("change", (e) => {
+  switch (e.target.value) {
+    case "begin":
+      difficultyStatement(10, "Fácil");
+      break;
+    case "normal":
+      difficultyStatement(20, "Normal");
+      break;
+    case "hard":
+      difficultyStatement(35, "Difícil");
+      break;
+    case "expert":
+      difficultyStatement(50, "Experto");
+      break;
+    default:
+      break;
+  }
+});
+
+playGame.addEventListener("submit", (e) => {
   e.preventDefault();
   const numberUser = user.value;
-  if (life > 1) {
+  if (lifes.textContent > 1) {
     if (numberUser != numberCPU && numberUser < numberCPU) {
       backgroundColorResult("#ff4949");
-      life--;
-      lifes.textContent = life;
+      lifes.textContent--;
       textComparation("El número es mayor!!");
     } else if (numberUser != numberCPU && numberUser > numberCPU) {
       backgroundColorResult("#ff4949");
-      life--;
-      lifes.textContent = life;
+      lifes.textContent--;
       textComparation("El número es menor!!");
     } else {
       winOrLose(true);
