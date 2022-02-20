@@ -37,20 +37,19 @@ const winOrLose = (boolean) => {
   }
 };
 
+let numberCPU;
+const user = document.getElementById("inputNumber");
+const playGame = document.querySelector(".gameContainer");
+const lifes = document.getElementById("lifes");
+const difficulty = document.querySelector(".difficultyContainer");
+const descriptionDifficulty = document.getElementById("descriptionDifficulty");
+
 const difficultyStatement = (maxNumber, level) => {
   numberCPU = Math.ceil(Math.random() * maxNumber);
   descriptionDifficulty.textContent = `Nivel ${level}: del 1 al ${maxNumber}`;
   inputNumber.setAttribute("min", 1);
   inputNumber.setAttribute("max", maxNumber);
 };
-
-let numberCPU;
-const user = document.getElementById("inputNumber");
-const playGame = document.querySelector(".gameContainer");
-const lifes = document.getElementById("lifes");
-
-const difficulty = document.querySelector(".difficultyContainer");
-const descriptionDifficulty = document.getElementById("descriptionDifficulty");
 
 difficulty.value = "begin";
 numberCPU = Math.ceil(Math.random() * 10);
