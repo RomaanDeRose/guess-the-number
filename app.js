@@ -77,7 +77,7 @@ difficulty.addEventListener("change", (e) => {
       break;
     case "hard":
       difficultyStatement(35, "Difícil");
-      stylesDifficulty("#ffc014");
+      stylesDifficulty("#ffa014");
       break;
     case "expert":
       difficultyStatement(50, "Experto");
