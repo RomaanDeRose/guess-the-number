@@ -44,6 +44,11 @@ const lifes = document.getElementById("lifes");
 const difficulty = document.querySelector(".difficultyContainer");
 const descriptionDifficulty = document.getElementById("descriptionDifficulty");
 
+const stylesDifficulty = (color) => {
+  descriptionDifficulty.style.backgroundColor = color;
+  descriptionDifficulty.style.boxShadow = `0px 0px 10px ${color}`;
+};
+
 const difficultyStatement = (maxNumber, level) => {
   numberCPU = Math.ceil(Math.random() * maxNumber);
   descriptionDifficulty.textContent = `Nivel ${level}: del 1 al ${maxNumber}`;
@@ -56,21 +61,27 @@ numberCPU = Math.ceil(Math.random() * 10);
 descriptionDifficulty.textContent = "Nivel Facil: del 1 al 10";
 inputNumber.setAttribute("min", 1);
 inputNumber.setAttribute("max", 10);
+stylesDifficulty("#43ff43");
+
 lifes.textContent = 3;
 
 difficulty.addEventListener("change", (e) => {
   switch (e.target.value) {
     case "begin":
       difficultyStatement(10, "Fácil");
+      stylesDifficulty("#43ff43");
       break;
     case "normal":
       difficultyStatement(20, "Normal");
+      stylesDifficulty("#e0ff2e");
       break;
     case "hard":
       difficultyStatement(35, "Difícil");
+      stylesDifficulty("#ffc014");
       break;
     case "expert":
       difficultyStatement(50, "Experto");
+      stylesDifficulty("#ff1e1e");
       break;
     default:
       break;
